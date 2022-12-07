@@ -1,8 +1,8 @@
-# ToDo List
+# ProjectName
 
-#### By Kirsten Opstad & Daniel Yakovlev
+#### By Kirsten Opstad 
 
-#### A ToDo List Console App
+#### A short description of ProjectName
 
 ## Technologies Used
 
@@ -13,22 +13,6 @@
 
 ### Objectives (MVP)
 
-App allows the user to add new items to a to do list. The user should also be able to see a list of the tasks they have already added.
-
-For example, the program could work like this:
-
-  Program: Welcome to the To Do List.
-  Program: Would you like to add an item to your list or view your list? (Add/View)
-  User: Add
-  Program: Please enter the description for the new item.
-  User: Walk the dog.
-  Program: 'Walk the dog' has been added to your list. Would you like to add an item to your list or view your list? (Add/View)
-  User: View
-  Program: 1. Walk the dog.
-  Program: Would you like to add an item to your list or view your list? (Add/View)
-
-Consider what the program should print if the user asks to view their list before they have added any items to it.
-
 <!-- [x] Screenshots
 
 ![Screenshots](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.03bZmDGXaBhBYyxxp3Ls3gHaEA%26pid%3DApi&f=1&ipt=e980d57210242747a51c41421e1f09a6de3b1fdaeaadd297496787bb64e80c88&ipo=images) -->
@@ -37,7 +21,8 @@ Consider what the program should print if the user asks to view their list befor
 
 ### Goals
 1. Meet MVP
-2. Write Stellar Tests
+2. Goal 2
+3. Goal 3
 
 ## Setup/Installation Requirements
 
@@ -59,7 +44,7 @@ Consider what the program should print if the user asks to view their list befor
 
 MIT License
 
-Copyright (c) 2022 Kirsten Opstad & Daniel Yakovlev
+Copyright (c) 2022 Kirsten Opstad
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
