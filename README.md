@@ -8,6 +8,7 @@
 
 * C#
 * .Net 6
+* ASP.Net Core 6 MVC
 
 ## Description
 
@@ -27,10 +28,12 @@
 ## Setup/Installation Requirements
 
 * Clone this repo to your workspace.
+<!-- * TODO: add ins. to update appsettings.json with a database connection string. -->
 * Navigate to the top level of the directory.
 * Navigate to program directory ``` $ cd ProjectName ```
 * To build & run program in development mode ``` $ dotnet run ```
 * To build & run program in production mode ``` dotnet run --launch-profile "production" ```
+
 
 ## Known Bugs
 
