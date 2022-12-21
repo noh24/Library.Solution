@@ -1,22 +1,25 @@
-# ProjectName
+# Project Name
 
-#### By Kirsten Opstad 
+#### By Kirsten Opstad
 
-#### A short description of ProjectName
+#### A template for a C# ASP.Net Core 6 MVC program 
 
 ## Technologies Used
 
 * C#
 * .Net 6
 * ASP.Net Core 6 MVC
+* EF Core 6
+* SQL
+* MySQL
+* MySQL Workbench
+* LINQ
 
 ## Description
 
 ### Objectives (MVP)
 
-<!-- [x] Screenshots
-
-![Screenshots](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.03bZmDGXaBhBYyxxp3Ls3gHaEA%26pid%3DApi&f=1&ipt=e980d57210242747a51c41421e1f09a6de3b1fdaeaadd297496787bb64e80c88&ipo=images) -->
+<!-- ![Screenshot of Databases](imagelink) -->
 
 <!-- [Link to operational site](http://www.kirstenopstad.github.com/<REPOSITORY NAME>) -->
 
@@ -27,13 +30,41 @@
 
 ## Setup/Installation Requirements
 
-* Clone this repo to your workspace.
-<!-- * TODO: add ins. to update appsettings.json with a database connection string. -->
-* Navigate to the top level of the directory.
-* Navigate to program directory ``` $ cd ProjectName ```
-* To build & run program in development mode ``` $ dotnet run ```
-* To build & run program in production mode ``` dotnet run --launch-profile "production" ```
+#### Get copy of MySQL database
+1. Clone this repo to your workspace.
+2. Open MySQLWorkbench [Click here for instructions to download]
+3. Under Administration Tab, select Data Import/Restore
+  * Select 'Import from Self Contained File'
+  * Select ../animal-shelter-export.sql from the AnimalShelter directory
+  <!-- ![Screenshot of MySQL Import Settings](INSERT SCREENSHOT LINK) -->
+  * Select "New..." and set new schema name to **PROJECT-NAME**
+  * Select 'Start Import'
+4. You should now have a copy of the **PROJECT-NAME** database on your machine.
 
+#### Open project
+1. Navigate to the `Project Name` directory.
+2. Create a file named `appsettings.json` with the following code. Be sure to update the Default Connection to your MySQL credentials.
+```
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=[PROJECT-NAME];uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];",
+  }
+}
+```
+3. Install dependencies within the `Project Name` directory
+```
+$ dotnet restore
+````
+
+4. To build & run program in development mode 
+ ```
+ $ dotnet run
+ ```
+
+5. To build & run program in production mode 
+ ```
+ dotnet run --launch-profile "production"
+ ```
 
 ## Known Bugs
 
@@ -43,11 +74,10 @@
   * If you'd like to be credited, please also include your **_github user profile link_**
 
 ## License
-<!-- [Choose License](https://choosealicense.com/) -->
 
 MIT License
 
-Copyright (c) 2022 Kirsten Opstad
+Copyright (c) 2022 Kirsten Opstad 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
