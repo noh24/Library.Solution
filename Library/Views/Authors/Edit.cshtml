@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+@model Library.Models.Author
+
+<h1>Edit Author</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.AuthorId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  <p>@Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger", @style = "font-weight: 600;"})</p>
+  <input type="submit" value="Update">
+}

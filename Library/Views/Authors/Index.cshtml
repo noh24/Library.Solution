@@ -10,11 +10,18 @@
   <table class="table table-striped">
     <tr>
       <th>Author Name</th>
+      <th>Manage</th>
     </tr>
   @foreach (Author author in Model)
   {
     <tr>
       <td>@Html.ActionLink($"{author.Name}", "Details", new { id = author.AuthorId })</td>
+      <td>
+        @using (Html.BeginForm("Delete", "Authors", routeValues : new { id = author.AuthorId}))
+        {
+          <input type="submit" value="Delete" class="btn btn-danger rounded-full">
+        }
+      </td>
     </tr>
   }  
   </table>

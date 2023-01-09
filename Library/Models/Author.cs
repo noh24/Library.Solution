@@ -7,7 +7,7 @@ namespace Library.Models
   public class Author
   {
     [Required(ErrorMessage = "Author must have a name")]
-    [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "Invalid Author Name")]
+    [RegularExpression("^[a-zA-Z .]+$", ErrorMessage = "Invalid Author Name")]
     public string Name {get;set;}
     public int AuthorId {get;set;}
     public List<AuthorBook> AuthorBooks { get; }

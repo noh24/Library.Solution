@@ -1,0 +1,11 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Author Details</h1>
+
+<p>@Model.Name</p>
+
+<!-- TODO: add books by author -->
+
+<p>@Html.ActionLink("Edit Author", "Edit", new { id = @Model.AuthorId })</p>
