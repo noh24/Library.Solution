@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    @RenderBody()
-    @* @await Html.PartialAsync("Footer") *@
+    <div class="d-flex flex-column container jumbotron bg-white shadow">
+      @await Html.PartialAsync("Navbar")
+      @RenderBody()
+    </div>
   </body>
 </html>
