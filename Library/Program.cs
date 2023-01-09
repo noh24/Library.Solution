@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ProjectName.Models;
+using Library.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ProjectName
 {
@@ -13,14 +14,17 @@ namespace ProjectName
 
       builder.Services.AddControllersWithViews();
 
-      // add EF Core as a service to our To Do List app, specify ToDoListContext as the type
-      builder.Services.AddDbContext<ToDoListContext>(
+      builder.Services.AddDbContext<LibraryContext>(
                         dbContextOptions => dbContextOptions
                           .UseMySql(
                             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
                           )
                         )
                       );
+      
+      // builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+      //           .AddEntityFrameworkStores<LibraryContext>()
+      //           .AddDefaultTokenProviders();
 
       WebApplication app = builder.Build();
 
@@ -29,6 +33,9 @@ namespace ProjectName
       app.UseStaticFiles();
 
       app.UseRouting();
+
+      // app.UseAuthentication();
+      // app.UseAuthorization();
 
       app.MapControllerRoute(
         name: "default",

@@ -34,7 +34,7 @@ An app to catalog a library's books and let patrons check them out. Below are so
 
 #### Database Schema
 
-![Screenshot of Databases](ProjectName/wwwroot/images/schema0.png)
+![Screenshot of Databases](./Library/wwwroot/images/schema1.png)
 
 <!-- [Link to operational site](http://www.kirstenopstad.github.com/<REPOSITORY NAME>) -->
 
