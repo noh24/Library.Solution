@@ -32,7 +32,9 @@ An app to catalog a library's books and let patrons check them out. Below are so
 * As a patron, I want to know when a book I checked out is __due__, so that I know when to return it.
 * As a librarian, I want to see a __list of overdue books__, so that I can call up the patron who checked them out and tell them to bring them back — OR ELSE!
 
-<!-- ![Screenshot of Databases](imagelink) -->
+#### Database Schema
+
+![Screenshot of Databases](ProjectName/wwwroot/images/schema0.png)
 
 <!-- [Link to operational site](http://www.kirstenopstad.github.com/<REPOSITORY NAME>) -->
 
