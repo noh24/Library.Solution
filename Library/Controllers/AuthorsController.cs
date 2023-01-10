@@ -30,12 +30,12 @@ namespace Library.Controllers
     [HttpPost]
     public ActionResult Create(Author author)
     {
-      if(!ModelState.IsValid)
+      if (!ModelState.IsValid)
       {
         return View(author);
       }
-      else 
-      {     
+      else
+      {
         _db.Authors.Add(author);
         _db.SaveChanges();
         return RedirectToAction("Index");
@@ -69,7 +69,7 @@ namespace Library.Controllers
       {
         _db.Authors.Update(author);
         _db.SaveChanges();
-        return RedirectToAction("Details", "Authors", new { id = author.AuthorId});
+        return RedirectToAction("Details", "Authors", new { id = author.AuthorId });
       }
     }
 
@@ -94,25 +94,34 @@ namespace Library.Controllers
     {
       Book addedBook = _db.Books.FirstOrDefault(book => book.BookId == bookId);
       // check if already an AuthorBook association
-      #nullable enable
+#nullable enable
       AuthorBook? authorBookEntity = _db.AuthorBooks.FirstOrDefault(authorBook => (authorBook.AuthorId == author.AuthorId && authorBook.BookId == bookId));
-      #nullable disable
+#nullable disable
       // if no AuthorBook association, create one
       if (authorBookEntity == null && bookId != 0)
       {
-        _db.AuthorBooks.Add( new AuthorBook { AuthorId = author.AuthorId, BookId = bookId});
+        _db.AuthorBooks.Add(new AuthorBook { AuthorId = author.AuthorId, BookId = bookId });
         _db.SaveChanges();
       }
-      return RedirectToAction("Details", "Authors", new { id = author.AuthorId});
+      return RedirectToAction("Details", "Authors", new { id = author.AuthorId });
     }
 
     [HttpPost]
-    public ActionResult RemoveBook(int joinId)
+    public ActionResult RemoveBook(int joinId, int type)
     {
       AuthorBook joinEntry = _db.AuthorBooks.FirstOrDefault(entry => entry.AuthorBookId == joinId);
       _db.AuthorBooks.Remove(joinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Details", new {id = joinEntry.AuthorId});
+      switch (type)
+      {
+        case 0:
+          return RedirectToAction("Details", new { id = joinEntry.AuthorId });
+        case 1:
+          return RedirectToAction("Details", "Books", new { id = joinEntry.BookId });
+        default:
+          return RedirectToAction("Index");
+      }
+      
     }
   }
 }
