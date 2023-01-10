@@ -1,0 +1,9 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Book Details</h1>
+
+<p>@Model.Title</p>
+
+<p>@Html.ActionLink("Edit Book", "Edit", new { id = @Model.BookId })</p>
