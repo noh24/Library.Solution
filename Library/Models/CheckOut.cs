@@ -11,7 +11,7 @@ namespace Library.Models
     // public int UserId {get;set;}
     // public IdentityUser User {get;set;}
     public int CopyId {get;set;}
-    public Copy Copy {get;set;}    
+    public Copy Copy {get;set;}
     public DateOnly DueDate {get;set;}
     [Required(ErrorMessage = "Must include date checked out")]
     [DataType(DataType.Date)]

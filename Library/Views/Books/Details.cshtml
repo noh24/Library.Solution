@@ -6,6 +6,7 @@
 <h1>Book Details</h1>
 
 <h3>Title: @Model.Title</h3>
+<h3>Copies Available: @ViewBag.CopyCount</h3>
 
 @if (Model.AuthorBooks.Count !=0 )
 {
@@ -39,5 +40,11 @@ else
   @Html.Label("Author")
   @Html.DropDownList("AuthorId")
   <input type="submit" value="Add">
+}
+@using (Html.BeginForm("Create", "Copies"))
+{
+  @Html.HiddenFor(book => book.BookId)
+  //input for int represents quantity
+  <input type="submit" value="Add Copy">
 }
 <p>@Html.ActionLink("Edit Book", "Edit", new { id = @Model.BookId })</p>

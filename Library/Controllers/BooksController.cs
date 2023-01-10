@@ -38,9 +38,13 @@ namespace Library.Models
         return RedirectToAction("Index");
       }
     }
-
+    
     public ActionResult Details(int id)
     {
+      //ViewBag.CopyCount = 0;
+                          // JOIN books to copies; filter WHERE matching id; SELECT * ; COUNT instances
+                          // SELECT * FROM books JOIN copies ... WHERE bookId = id 
+      ViewBag.CopyCount = _db.Books.Include(copy => copy.Copies).Where(book => book.BookId == id).SelectMany(book => book.Copies).Count();
       ViewBag.AuthorId = new SelectList(_db.Authors, "AuthorId", "Name");
       Book thisBook = _db.Books.Include(join => join.AuthorBooks)
                                .ThenInclude(authorBook => authorBook.Author)
