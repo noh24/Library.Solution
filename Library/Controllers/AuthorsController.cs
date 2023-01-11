@@ -92,7 +92,6 @@ namespace Library.Controllers
     [HttpPost]
     public ActionResult AddBook(Author author, int bookId)
     {
-      Book addedBook = _db.Books.FirstOrDefault(book => book.BookId == bookId);
       // check if already an AuthorBook association
 #nullable enable
       AuthorBook? authorBookEntity = _db.AuthorBooks.FirstOrDefault(authorBook => (authorBook.AuthorId == author.AuthorId && authorBook.BookId == bookId));

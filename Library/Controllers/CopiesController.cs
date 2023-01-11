@@ -36,11 +36,11 @@ namespace Library.Controllers
       return RedirectToAction("Details", "Books", new {id = book.BookId});
     }
     // Read (Details)
-    public ActionResult Details(int id)
-    {
-      Copy thisCopy = _db.Copies.FirstOrDefault(copy => copy.CopyId == id);
-      return View(thisCopy);
-    }
+    // public ActionResult Details(int id)
+    // {
+    //   Copy thisCopy = _db.Copies.FirstOrDefault(copy => copy.CopyId == id);
+    //   return View(thisCopy);
+    // }
     // Update (Edit)
     public ActionResult Edit(int id)
     {
@@ -54,6 +54,13 @@ namespace Library.Controllers
         thisCopy.IsCheckedOut = true;
       }
       _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+    [HttpPost]
+    public ActionResult Delete(int id)
+    {
+      Copy thisCopy = _db.Copies.FirstOrDefault(copy => copy.CopyId == id);
+      _db.Copies.Remove(thisCopy);
       return RedirectToAction("Index");
     }
   }
